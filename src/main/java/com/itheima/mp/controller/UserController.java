@@ -58,7 +58,15 @@ public class UserController {
 		//1.查询用户PO
 		List<User> users = userService.listByIds(ids);
 		//2.把PO拷贝到VO
+		ids.forEach(System.out::println);
 		return BeanUtil.copyToList(users, UserVO.class);
+		/*
+		//1.查询用户PO
+		List<User> users = userService.listByIds(ids);
+		//2.把PO拷贝到VO
+		return BeanUtil.copyToList(users, UserVO.class);
+		 */
+
 	}
 
 	@PutMapping("/{id}/deduction/{money}")
